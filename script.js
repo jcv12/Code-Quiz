@@ -1,8 +1,10 @@
+// variables for page elements
 // time and score
 let timeEl = document.querySelector("p.time");
 let secondsLeft = 75;
 let scoreEl = document.querySelector("#score");
 
+// sections
 // section intro
 const introEl = document.querySelector("#intro");
 
@@ -84,6 +86,9 @@ const questions = [ // array of objects
     }
 ];
 
+
+// Functions
+
 // timer
 function setTime() {
     let timerInterval = setInterval(function () {
@@ -99,6 +104,7 @@ function setTime() {
     }, 1000);
 }
 
+// start quiz with timer and set up questions
 function startQuiz() {
     introEl.style.display = "none";
     questionsEl.style.display = "block";
@@ -108,6 +114,7 @@ function startQuiz() {
     setQuestion(questionCount);
 }
 
+// function to set question; takes in a count and displays the next question/answers
 function setQuestion(id) {
     if (id < questions.length) {
         questionEl.textContent = questions[id].question;
